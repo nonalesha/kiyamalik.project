@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOVE THESIS - Interactive Research Paper</title>
+
+  <!-- Tailwind CSS -->
+  <script src="script.js" defer></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="toolbar">
+    <div class="brand">
+      <div class="brand-icon">🎓</div>
+      <div>
+        <h1>LOVE THESIS</h1>
+        <p>Interactive Research Paper v2.0</p>
+      </div>
+    </div>
+
+    <div class="toolbar-actions">
+      <button class="outline-btn" onclick="toggleAudio()">
+        <i id="musicIcon" class="fa-solid fa-music"></i>
+        <span id="musicText">Audio Romantis</span>
+      </button>
+
+      <button class="gray-btn" onclick="openCustomizeModal()">
+        <i class="fa-solid fa-sliders"></i> Edit Data
+      </button>
+    </div>
+  </header>
+
+  <nav class="navigation">
+    <button id="nav-step-1" onclick="goToStep(1)">1. Cover</button>
+    <button id="nav-step-2" onclick="goToStep(2)">2. Bab I & II</button>
+    <button id="nav-step-3" onclick="goToStep(3)">3. Evaluasi</button>
+    <button id="nav-step-4" onclick="goToStep(4)">4. Penutup</button>
+  </nav>
+
+  <main class="paper-sheet">
+
+    <!-- HALAMAN COVER -->
+    <section id="step-1" class="step-content">
+      <div class="cover-icon">🎓 <span>♥</span></div>
+
+      <h2 class="main-title">LOVE THESIS</h2>
+      <p class="subtitle">— Interactive Research Paper —</p>
+
+      <div class="thesis-box">
+        <h3 id="displayThesisTitle">
+          MAKALAH KAUSALITAS PSIKO-EMOSIONAL:
+          EVALUASI KUANTITATIF DAN KUALITATIF
+          ATAS RASA KANGEN YANG DIKONTRIBUSIKAN
+          OLEH SEORANG PACAR
+        </h3>
+
+        <p id="displayThesisSubtitle">
+          "Diajukan Guna Mempertahankan Status
+          Hubungan Harmonis Berkelanjutan"
+        </p>
+        <div class="heart">♥</div>
+      </div>
+
+      <div class="auth-box" id="authBox">
+        <h3><i class="fa-solid fa-user-lock"></i>
+          SISTEM OTENTIKASI PEMBACA</h3>
+        <p>Masukkan nama lengkap kamu untuk membuka dokumen ini.</p>
+
+        <input id="readerNameInput" type="text"
+          placeholder="Tulis nama kamu di sini...">
+
+        <button class="primary-btn" onclick="validateReader()">
+          VALIDASI DATA <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <div class="author">
+        <p><b>Disusun Oleh:</b></p>
+        <h3 id="displayResearcherName">Azqya</h3>
+        <p id="displayResearcherTitle">
+          Jabatan: Kepala Bagian Menyayangimu Sepenuh Hati
+        </p>
+        <h4>FAKULTAS ASMARA DAN PENGEMBANGAN HATI</h4>
+      </div>
+    </section>
+
+    <!-- BAB I -->
+    <section id="step-2" class="step-content hidden">
+      <div class="section-heading">
+        <p>DOKUMEN RESMI — LEMBAR PENELITIAN</p>
+        <h2>KATA PENGANTAR & BAB I PENDAHULUAN</h2>
+      </div>
+
+      <h3 class="chapter-title">KATA PENGANTAR</h3>
+
+      <p class="paragraph">
+        Puji dan syukur penulis panjatkan ke hadirat Tuhan Yang Maha Esa
+        atas limpahan rahmat dan energi positif sehingga penulis mampu
+        menyampaikan karya ilmiah berjudul
+        <b class="maroon">"Makalah Kausalitas Rindu"</b>
+        ini tepat pada waktunya.
+      </p>
+
+      <p class="paragraph">
+        Penelitian ini disusun atas dasar komitmen jangka panjang dalam
+        mengobservasi subjek penelitian, yaitu
+        <b class="target-name">malik</b>.
+        Penulis berterima kasih kepada subjek atas kesediaannya menjadi
+        alasan dari keseluruhan penelitian ini.
+      </p>
+
+      <div class="contents">
+        <h3>DAFTAR ISI DOKUMEN</h3>
+        <button onclick="goToStep(1)">HALAMAN COVER & OTENTIKASI</button>
+        <button onclick="goToStep(2)">KATA PENGANTAR & PENDAHULUAN</button>
+        <button onclick="goToStep(3)">BAB II: UJI VALIDASI INTERAKTIF</button>
+        <button onclick="goToStep(4)">BAB III: KESIMPULAN MUTLAK</button>
+      </div>
+
+      <h3 class="chapter-title">BAB I: PENDAHULUAN</h3>
+
+      <h4>1.1 Latar Belakang</h4>
+      <p class="paragraph">
+        Berdasarkan pengamatan intensif selama hubungan berlangsung,
+        ditemukan bahwa tingkat kerinduan tidak terdistribusi secara
+        linier, melainkan mengalami lonjakan saat jarak dan waktu
+        tidak memihak.
+      </p>
+
+      <h4>1.2 Rumusan Masalah</h4>
+      <ol>
+        <li>Bagaimana kelucuan subjek dapat merusak logika penulis?</li>
+        <li>Mengapa rasa kangen meningkat setiap malam?</li>
+        <li>Apakah subjek mengakui perasaan yang sama?</li>
+      </ol>
+
+      <div class="center">
+        <button class="primary-btn" onclick="goToStep(3)">
+          Lanjut ke Bab II →
+        </button>
+      </div>
+    </section>
+
+    <!-- EVALUASI INTERAKTIF -->
+    <section id="step-3" class="step-content hidden">
+      <div class="section-heading">
+        <p>UJI HIPOTESIS & ANALISIS DATA</p>
+        <h2>BAB II: METODOLOGI & PERTANYAAN INTERAKTIF</h2>
+      </div>
+
+      <div class="question-card">
+        <span class="tag">UJI UTAMA #01</span>
+        <h3>UJI VALIDASI KANGEN</h3>
+        <p>Jawab pertanyaan berikut dengan jujur:</p>
+        <h2>"Apakah kamu juga kangen banget sama aku sekarang?"</h2>
+
+        <div class="answer-area" id="dodgeArea">
+          <button class="primary-btn" onclick="answerKangen()">
+            ♥ YA, BANGET!
+          </button>
+          <button id="btnGak" class="gray-btn"
+            onmouseenter="dodgeButton()" onclick="dodgeButton()">
+            GAK
+          </button>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <h3>INSTRUMEN TAMBAHAN METRIK ASMARA</h3>
+
+        <label for="cuteSlider">
+          Tingkat Kelucuan Hari Ini:
+          <b id="sliderValue">100%</b>
+        </label>
+
+        <input type="range" min="50" max="1000" value="100"
+          id="cuteSlider" oninput="updateSlider(this.value)">
+
+        <p id="sliderFeedback">
+          Skala standar tercapai (maksimal tak terhingga).
+        </p>
+
+        <h4>Status Perpanjangan Kontrak Hubungan:</h4>
+
+        <label class="radio-option">
+          <input type="radio" name="contract" value="100" checked>
+          Hingga 100 tahun ke depan
+        </label>
+
+        <label class="radio-option">
+          <input type="radio" name="contract" value="forever">
+          Seumur hidup + bonus pelukan gratis tiap hari
+        </label>
+      </div>
+
+      <div class="center">
+        <button class="primary-btn" onclick="goToStep(4)">
+          Lihat Kesimpulan Mutlak →
+        </button>
+      </div>
+    </section>
+
+    <!-- PENUTUP -->
+    <section id="step-4" class="step-content hidden">
+      <div class="section-heading">
+        <p>HASIL AKHIR PENELITIAN</p>
+        <h2>BAB III: KESIMPULAN MUTLAK</h2>
+      </div>
+
+      <h3>3.1 Hasil Akhir Penelitian</h3>
+
+      <blockquote>
+        "Berdasarkan seluruh data observasi, interaksi, dan simulasi
+        yang telah dijalankan, penelitian ini menghasilkan kesimpulan
+        bahwa rasa cinta tidak dapat dihitung dengan angka semata."
+      </blockquote>
+
+      <p class="paragraph">
+        Subjek bernama <b class="target-name">malik</b> telah menjadi
+        penyebab utama munculnya rasa cinta dan kangen dalam diri
+        peneliti (<b id="displayResearcherName2">Azqya</b>).
+        Peneliti merekomendasikan agar hubungan ini dipenuhi kasih
+        sayang, komunikasi, dan kebahagiaan. ♥
+      </p>
+
+      <div class="signature-section">
+        <h3>LEMBAR PENGESAHAN & TANDA TANGAN DIGITAL</h3>
+
+        <div class="signature-grid">
+          <div>
+            <p>Peneliti / Pasangan</p>
+            <div class="signature-name" id="displaySignature1">Azqya</div>
+            <b id="displayResearcherName3">Azqya</b>
+          </div>
+
+          <div>
+            <p>Subjek Tercinta / Pasangan</p>
+            <div class="canvas-wrap">
+              <canvas id="signatureCanvas"></canvas>
+              <span id="canvasPlaceholder">
+                Gambar tanda tangan atau hati di sini
+              </span>
+              <button class="reset-btn" onclick="clearCanvas()">Reset</button>
+            </div>
+            <b class="target-name">malik</b>
+          </div>
+        </div>
+      </div>
+
+      <div class="final-actions">
+        <button class="primary-btn" onclick="triggerLoveCelebration()">
+          ♥ Rayakan Cinta
+        </button>
+        <button class="gray-btn" onclick="window.print()">
+          Cetak / Simpan PDF
+        </button>
+      </div>
+
+      <p class="ending">♥ Every love story deserves a thesis. ♥</p>
+    </section>
+  </main>
+
+  <footer>
+    LOVE THESIS — Interactive Research Paper Platform
+  </footer>
+
+  <!-- MODAL AUTENTIKASI -->
+  <div class="modal hidden" id="authSuccessModal">
+    <div class="modal-content">
+      <h2>♥ Otentikasi Berhasil!</h2>
+      <p>
+        Selamat datang, <b id="modalReaderName">---</b>.
+        Dokumen penelitian siap dibaca!
+      </p>
+      <button class="primary-btn" onclick="closeAuthModal()">
+        SIAP, MULAI MEMBACA!
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL EDIT DATA -->
+  <div class="modal hidden" id="customModal">
+    <div class="modal-content">
+      <h2>Kustomisasi Data</h2>
+
+      <label>Nama Peneliti</label>
+      <input id="editResearcherName" value="Azqya">
+
+      <label>Jabatan Peneliti</label>
+      <input id="editResearcherTitle"
+        value="Kepala Bagian Menyayangimu Sepenuh Hati">
+
+      <label>Nama Subjek / Pasangan</label>
+      <input id="editTargetName" value="malik">
+
+      <label>Judul Penelitian</label>
+      <textarea id="editThesisTitle" rows="3">MAKALAH KAUSALITAS PSIKO-EMOSIONAL: EVALUASI KUANTITATIF DAN KUALITATIF ATAS RASA KANGEN YANG DIKONTRIBUSIKAN OLEH SEORANG PACAR</textarea>
+
+      <div class="modal-actions">
+        <button class="gray-btn" onclick="closeCustomizeModal()">Batal</button>
+        <button class="primary-btn" onclick="saveCustomizations()">Simpan</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
